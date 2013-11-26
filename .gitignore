@@ -20,3 +20,5 @@
 #Eclips files
 /.cproject
 /.project
+/.settings/
+/Debug
