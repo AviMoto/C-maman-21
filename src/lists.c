@@ -10,14 +10,27 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "lists.h"
 
 int main(void) {
-	char choise;
+	char choise=0, *string;
 
-	printf("/nplese choise how to store the input:/n");
-	printf("1. conected list/n");
-	printf("2. array in memory/n");
-	printf("enter your choise:");
+	printf("\nplease chose how to store the input:\n");
+	printf("1. connected list\n");
+	printf("2. array in memory\n");
+	printf("enter your chose:");
 	choise = getchar();
+	switch(choise){
+		case '1':
+			break;
+		case '2':
+			string = malloc(10*sizeof(char));
+			if (string != 0){
+
+			}
+			break;
+		default:
+			break;
+	}
 	return 0;
 }
