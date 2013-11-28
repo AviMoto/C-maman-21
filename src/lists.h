@@ -12,3 +12,4 @@
 
 #endif /* LISTS_H_ */
 #define STRING_BLOCK 10
+typedef struct stringStruct cstring;
