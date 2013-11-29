@@ -45,6 +45,7 @@ int main(void) {
 				first = first->next;
 				free(list);
 			}
+			free(first);
 			again = 0;
 			break;
 		case '2':
