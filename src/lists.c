@@ -16,7 +16,7 @@
 int main(void) {
 	int index = 1, interval = 1, again = 1;
 	char *string = NULL, choise = '\0', input;
-	cstring *list = NULL, *head = NULL;
+	cstring *list = NULL, *first;
 
 	while (again > 0) {
 		/* Print a menu for user to chose between to option of running */
@@ -29,21 +29,21 @@ int main(void) {
 		printf("\nStart to enter your string\n");
 		switch (choise) {
 		case '1':
-			while (1 == 1) { /*  make infinty loop to raise memory when it need */
-				list = (cstring *) malloc(sizeof(cstring));
+			first = (cstring *) malloc(sizeof(cstring));
+			list = first;
+			while ((input = getchar()) != '\n') { /* check if we get new line to end the input*/
 				if (list != NULL) { /* verify that we get a pointer */
-					if ((input = getchar()) == '\n') { /* check if we get new line to end the input*/
-						break;
-					}
 					list->str = input;
-					list->next = head;
-					head = list;
+					list->next = (cstring *) malloc(sizeof(cstring));
+					list = list->next;
 				}
 			}
-			printf("\nthe string we get is");
-			while (list != NULL) {
-				printf("%c", list->str);
-				list = list->next;
+			printf("The string we get is ");
+			while (first->next != NULL) {
+				putchar(first->str);
+				list = first;
+				first = first->next;
+				free(list);
 			}
 			again = 0;
 			break;
@@ -84,9 +84,6 @@ int main(void) {
 	}
 	if (string != NULL) {
 		free(string);
-	}
-	if (head != NULL) {
-		free(head);
 	}
 	return 0;
 }
