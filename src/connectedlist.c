@@ -14,10 +14,7 @@ void connected_list_string() {
 	char input;
 
 	first = (cstring *) malloc(sizeof(cstring));
-	if(first != NULL){
-		list = first;
-		first->next = NULL;
-	}
+	list = first;
 	while ((input = getchar()) != '\n') { /* check if we get new line to end the input*/
 		if (list != NULL) { /* verify that we get a pointer */
 			list->str = input;
@@ -25,6 +22,7 @@ void connected_list_string() {
 			list = list->next;
 		}
 	}
+	list->next = NULL;
 	printf("The string we get is ");
 	while (first->next != NULL) {
 		putchar(first->str);
@@ -32,5 +30,6 @@ void connected_list_string() {
 		first = first->next;
 		free(list);
 	}
+	printf("\n");
 	free(first);
 }

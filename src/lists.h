@@ -7,9 +7,9 @@
 
 #ifndef LISTS_H_
 #define LISTS_H_
-
-
+#include "connectedlist.h"
+#include "memoryarray.h"
 
 #endif /* LISTS_H_ */
-#define STRING_BLOCK 10
+
 
