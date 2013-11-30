@@ -7,9 +7,9 @@
 
 #ifndef CONNECTEDLIST_H_
 #define CONNECTEDLIST_H_
-
+#include "common.h"
 struct stringStruct {
-	char str;
+	char str[STRING_BLOCK];
 	struct stringStruct * next;
 };
 

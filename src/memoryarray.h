@@ -7,7 +7,7 @@
 
 #ifndef MEMORYARRAY_H_
 #define MEMORYARRAY_H_
-#define STRING_BLOCK 10
+#include "common.h"
 
 void stroe_in_memory();
 #endif /* MEMORYARRAY_H_ */

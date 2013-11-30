@@ -4,8 +4,8 @@ lists : lists.o connectedlist.o memoryarray.o
 lists.o : lists.c lists.h
 	gcc -c -Wall -ansi -pedantic lists.c -o lists.o
 	
-connectedlist.o : connectedlist.c connectedlist.h
+connectedlist.o : connectedlist.c connectedlist.h common.h
 	gcc -c -Wall -pedantic -ansi connectedlist.c -o connectedlist.o
 	
-memoryarray.o : memoryarray.c memoryarray.h
+memoryarray.o : memoryarray.c memoryarray.h common.h
 	gcc -c -Wall -pedantic -ansi memoryarray.c -o memoryarray.o
