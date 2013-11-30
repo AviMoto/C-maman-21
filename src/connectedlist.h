@@ -13,4 +13,7 @@ struct stringStruct {
 	struct stringStruct * next;
 };
 
+typedef struct stringStruct cstring;
+
+void connected_list_string();
 #endif /* CONNECTEDLIST_H_ */
