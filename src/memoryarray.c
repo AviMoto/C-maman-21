@@ -9,6 +9,10 @@
 #include <stdlib.h>
 #include "memoryarray.h"
 
+/*
+ * This function get string input from the user and save it in memory
+ * in the end it print the string, and realse the memory
+ */
 void stroe_in_memory() {
 	int index = 1, interval = 1;
 	char *string = NULL, input;
@@ -24,6 +28,7 @@ void stroe_in_memory() {
 			for (index = STRING_BLOCK * (interval - 1); /* get input from the user in intervals of STRING_BLOCK*/
 			index < STRING_BLOCK * interval; ++index) {
 				if ((input = getchar()) == '\n') { /* check if we get new line to end the input*/
+					*(string + index) = '\0';
 					break;
 				}
 				*(string + index) = input; /* save the input in memory */
